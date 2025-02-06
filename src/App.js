@@ -23,8 +23,7 @@ function App() {
           {JSON.stringify({
             NODE_ENV: process.env.NODE_ENV,
             ...Object.fromEntries(
-              Object.entries(process.env)
-                .filter(([key]) => key.startsWith('AWS'))
+              process.env
             )
           }, null, 2)}
         </pre>
