@@ -8,6 +8,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+    {JSON.stringify({
+            NODE_ENV: process.env.NODE_ENV,
+            ...Object.fromEntries(
+              process.env
+            )
+          }, null, 2)}
         </p>
         <a
           className="App-link"
@@ -17,15 +23,6 @@ function App() {
         >
           Learn React
         </a>
-       <h1>Environment Variables</h1>
-        <pre style={{ background: '#f4f4f4', padding: '1rem', borderRadius: '4px' }}>
-          {JSON.stringify({
-            NODE_ENV: process.env.NODE_ENV,
-            ...Object.fromEntries(
-              process.env
-            )
-          }, null, 2)}
-        </pre>
       </header>
     </div>
   );
