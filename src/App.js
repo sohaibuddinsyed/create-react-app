@@ -8,12 +8,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-    {JSON.stringify({
-            NODE_ENV: process.env.NODE_ENV,
-            ...Object.fromEntries(
-              process.env
-            )
-          }, null, 2)}
         </p>
         <a
           className="App-link"
