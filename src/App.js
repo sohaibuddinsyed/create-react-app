@@ -6,15 +6,13 @@ function App() {
   const [totalMemory, setTotalMemory] = useState(0);
 
   useEffect(() => {
-    // Get total memory in bytes and convert to GB
-    const memoryInGB = Math.round(process.memoryUsage().heapTotal / 1024 / 1024 / 1024 * 100) / 100;
-    setTotalMemory(memoryInGB);
-    
-    // Log memory information to console
-    console.log('Total Memory Available:', memoryInGB, 'GB');
-    console.log('Detailed Memory Usage:', process.memoryUsage());
-  }, []);
-
+  // For browser environments
+  if (navigator.deviceMemory) {
+    const memory = navigator.deviceMemory;
+    setTotalMemory(memory);
+    console.log('Total Device Memory:', memory, 'GB');
+  }
+}, []);
   return (
     <div className="App">
       <header className="App-header">
