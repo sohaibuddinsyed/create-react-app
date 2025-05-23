@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import process from 'process';
 import { useState, useEffect } from 'react';
 
 function App() {
   const [totalMemory, setTotalMemory] = useState(0);
 
+  
   useEffect(() => {
   // For browser environments
   if (navigator.deviceMemory) {
@@ -12,6 +14,7 @@ function App() {
     setTotalMemory(memory);
     console.log('Total Device Memory:', memory, 'GB');
   }
+    console.log(process.memoryUsage());
 }, []);
   return (
     <div className="App">
