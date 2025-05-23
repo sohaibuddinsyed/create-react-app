@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import process from 'process';
+import v8 from 'v8';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     setTotalMemory(memory);
     console.log('Total Device Memory:', memory, 'GB');
   }
-    console.log(process.memoryUsage());
+    console.log(`Heap stats: ${v8.getHeapStatistics()}`);
 }, []);
   return (
     <div className="App">
