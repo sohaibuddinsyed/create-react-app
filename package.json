@@ -15,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:prof": "node --prof --no-logfile-per-isolate node_modules/.bin/react-scripts build",
+    "build:heapprof": "node --heap-prof --prof --no-logfile-per-isolate node_modules/.bin/react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
